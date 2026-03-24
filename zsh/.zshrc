@@ -5,6 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Ona — injected secrets on Ona-managed hosts
+if [[ -f /etc/profile.d/ona-secrets.sh ]]; then
+  source /etc/profile.d/ona-secrets.sh
+fi
+
 # Homebrew — set HOMEBREW_PREFIX / PATH for standard install locations
 if command -v brew >/dev/null 2>&1; then
   eval "$(brew shellenv)"
