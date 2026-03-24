@@ -16,9 +16,11 @@ Clone this repo and run:
 ./install.sh
 ```
 
-This ensures Homebrew is available, installs the zsh theme/plugins above, then symlinks `zsh/.zshrc` → `~/.zshrc` and `zsh/.zprofile` → `~/.zprofile`.
+This ensures Homebrew is available, installs the zsh theme/plugins above, then symlinks `zsh/.zshrc` → `~/.zshrc`, `zsh/.zprofile` → `~/.zprofile`, and `git/gitconfig` → `~/.gitconfig` (author name and email for Git).
 
 Open a new terminal (or run `exec zsh`) so the links take effect.
+
+`~/.gitconfig` becomes a symlink to this repo; if you had other Git settings there, move them into [`git/gitconfig`](git/gitconfig) (or use Git’s `[include]` in that file) so they are not lost.
 
 ## GitHub Codespaces
 
@@ -34,7 +36,8 @@ Run `p10k configure`, then replace `zsh/p10k.zsh` with your new `~/.p10k.zsh` an
 
 | Path | Purpose |
 |------|---------|
-| `install.sh` | Install Homebrew if missing, `brew install` zsh theme/plugins, symlink zsh configs into `$HOME` |
+| `install.sh` | Install Homebrew if missing, `brew install` zsh theme/plugins, symlink zsh + git configs into `$HOME` |
+| `git/gitconfig` | Git `user.name` and `user.email` |
 | `zsh/.zshrc` | Interactive zsh (p10k, plugins, `PATH`) |
 | `zsh/.zprofile` | Login zsh (Homebrew) |
 | `zsh/p10k.zsh` | Powerlevel10k wizard output |

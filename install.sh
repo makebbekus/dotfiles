@@ -64,5 +64,6 @@ HOMEBREW_NONINTERACTIVE=1 brew install powerlevel10k zsh-autosuggestions zsh-syn
 
 ln -sf "$ROOT/zsh/.zshrc" "$HOME/.zshrc"
 ln -sf "$ROOT/zsh/.zprofile" "$HOME/.zprofile"
+ln -sf "$ROOT/git/gitconfig" "$HOME/.gitconfig"
 
-echo "Linked ~/.zshrc and ~/.zprofile -> $ROOT/zsh/"
+echo "Linked ~/.zshrc, ~/.zprofile -> $ROOT/zsh/; ~/.gitconfig -> $ROOT/git/gitconfig"

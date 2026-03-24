@@ -1,0 +1,5 @@
+[core]
+	editor = cursor --wait
+[user]
+	name = Michael Kebbekus
+	email = michael.kebbekus@vanta.com
