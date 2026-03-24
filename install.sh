@@ -67,3 +67,16 @@ ln -sf "$ROOT/zsh/.zprofile" "$HOME/.zprofile"
 ln -sf "$ROOT/git/gitconfig" "$HOME/.gitconfig"
 
 echo "Linked ~/.zshrc, ~/.zprofile -> $ROOT/zsh/; ~/.gitconfig -> $ROOT/git/gitconfig"
+
+# Oh My Zsh — clone framework only; --keep-zshrc preserves symlinked dotfiles .zshrc
+ensure_command git
+if [[ ! -d "${ZSH:-$HOME/.oh-my-zsh}" ]]; then
+  echo "==> Installing Oh My Zsh..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
+else
+  echo "==> Oh My Zsh already installed at ${ZSH:-$HOME/.oh-my-zsh}, skipping"
+fi
+
+# Set zsh as the default shell
+echo "==> Setting shell to zsh"
+sudo chsh -s "$(command -v zsh)" "$(id -un)"

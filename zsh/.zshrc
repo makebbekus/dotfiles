@@ -10,6 +10,14 @@ if [[ -f /etc/profile.d/ona-secrets.sh ]]; then
   source /etc/profile.d/ona-secrets.sh
 fi
 
+# Oh My Zsh (install.sh clones to ~/.oh-my-zsh). Clear default theme. Powerlevel10k loaded from Homebrew below.
+export ZSH="${ZSH:-$HOME/.oh-my-zsh}"
+if [[ -r "$ZSH/oh-my-zsh.sh" ]]; then
+  ZSH_THEME=""
+  plugins=(git)
+  source "$ZSH/oh-my-zsh.sh"
+fi
+
 # Homebrew — set HOMEBREW_PREFIX / PATH for standard install locations
 if command -v brew >/dev/null 2>&1; then
   eval "$(brew shellenv)"
