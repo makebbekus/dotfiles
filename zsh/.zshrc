@@ -42,3 +42,12 @@ DOTFILES_ZSH_DIR="${${(%):-%x}:A:h}"
 [[ ! -r "$DOTFILES_ZSH_DIR/p10k.zsh" ]] || source "$DOTFILES_ZSH_DIR/p10k.zsh"
 
 export PATH="$HOME/.local/bin:$PATH"
+
+DISABLE_AUTO_TITLE="true"
+title() {
+  # \e]1; sets the tab name (icon name)
+  # \e]2; sets the window title
+  # \a is the terminal bell character (BEL) used as a terminator
+  print -Pn "\e]1;$1\a"
+  print -Pn "\e]2;$1\a"
+}
