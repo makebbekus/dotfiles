@@ -60,7 +60,7 @@ export HOMEBREW_NO_AUTO_UPDATE="${HOMEBREW_NO_AUTO_UPDATE:-1}"
 export HOMEBREW_NO_ENV_HINTS="${HOMEBREW_NO_ENV_HINTS:-1}"
 
 echo "==> Installing zsh theme and plugins (Homebrew)..."
-HOMEBREW_NONINTERACTIVE=1 brew install powerlevel10k zsh-autosuggestions zsh-syntax-highlighting
+HOMEBREW_NONINTERACTIVE=1 brew install powerlevel10k font-hack-nerd-font zsh-autosuggestions zsh-syntax-highlighting
 
 ln -sf "$ROOT/zsh/.zshrc" "$HOME/.zshrc"
 ln -sf "$ROOT/zsh/.zprofile" "$HOME/.zprofile"
