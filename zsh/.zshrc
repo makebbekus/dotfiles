@@ -43,9 +43,11 @@ DOTFILES_ZSH_DIR="${${(%):-%x}:A:h}"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-# Ruby rbenv set-up
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# Ruby rbenv set-up (optional — only loaded if rbenv is installed)
+if [[ -d "$HOME/.rbenv/bin" ]]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
 # title() function to rename terminal windows
 DISABLE_AUTO_TITLE="true"
